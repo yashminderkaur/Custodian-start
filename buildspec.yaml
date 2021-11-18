@@ -11,7 +11,7 @@ phases:
       - export cloud_custodian_role="arn:aws:iam::281786681683:role/CloudCustodian"
       - curl -LO https://raw.githubusercontent.com/cloud-custodian/cloud-custodian/master/tools/c7n_org/scripts/orgaccounts.py
       - curl -LO https://raw.githubusercontent.com/cloud-custodian/cloud-custodian/master/tools/ops/mugc.py
-      - python orgaccounts.py -f accounts.yaml --role $cloud_custodian_role --active -r us-east-1 -i 281786681683
+      - python orgaccounts.py -f accounts.yaml --role cloud_custodian_role --active -r us-east-1 -i 281786681683
       - cat accounts.yaml
   build:
     commands:
