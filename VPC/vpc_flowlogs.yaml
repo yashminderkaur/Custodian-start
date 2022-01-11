@@ -1,0 +1,12 @@
+policies:
+  - name: flow-logs-enabled
+    resource: vpc
+    description: | 
+        This policy will create flow logs if already not enabled. 
+    filters:
+      - type: flow-logs
+        enabled: false
+#    actions:
+#      - type: set-flow-log
+#        DeliverLogsPermissionArn: arn:iam:role
+#        LogGroupName: /custodian/vpc/flowlogs/

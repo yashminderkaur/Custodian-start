@@ -1,0 +1,12 @@
+policies:
+   - name: kms-key-cross-account
+     resource: kms-key
+     description: | 
+          This policy will enable key rotation for customer created CKMs.
+     filters:
+       - type: key-rotation-status
+         key: KeyRotationEnabled
+         value: False
+#     actions:
+#       - type: set-rotation
+#         state: True

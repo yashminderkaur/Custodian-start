@@ -1,0 +1,11 @@
+policies: 
+  - name: no-iam-policy-user
+    resource: iam-user
+    description: |
+          This IAM policy will filter out the users with no IAM policies. 
+    filters: 
+      - type: policy
+        key: PolicyName
+        value: iam-policy
+#    actions:
+#      - type: 

@@ -1,0 +1,11 @@
+policies:
+  - name: encrypt-log-group
+    resource: log-group
+    description: | 
+          This policy will encrypt cloudwatch with kms 
+    filters:
+      - kmsKeyId: absent
+    actions:
+      - type: set-encryption
+        kms-key: alias/mylogkey
+        state: True

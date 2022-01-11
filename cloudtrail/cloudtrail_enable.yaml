@@ -1,0 +1,22 @@
+policies:
+  - name: global-service-trail
+    description: |
+          Ensure CloudTrail logging is enabled
+    resource: account
+    filters:
+      - type: check-cloudtrail
+        global-events: true
+        running: true
+#    actions:
+#      - type: enable-cloudtrail
+#        trail: mytrail
+#        bucket: trails
+
+  - name: multi-region-trail
+    description: |
+          Ensure CloudTrail logging is enabled
+    resource: account
+    filters:
+      - type: check-cloudtrail
+        multi-region: true
+        running: true

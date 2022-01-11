@@ -1,0 +1,86 @@
+policies:
+- name: sg-add-permission
+  resource: security-group
+  description: |
+      
+  
+  filters:
+   - or:
+     - type: ingress
+       Ports: [22]           #SSH Port
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [3389]         # RDS port
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [4506]          # TCP/UDP [ SaltSack Master]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [139]           # TCP/UDP [ NetBios Session Service ]  
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [389]            # TCP [ LDAP]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [5900]           # TCP [ Virtual Network Computing]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [11214]          # TCP/UDP [ Memcached SSL ]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [23]             # TCP [ Telnet ]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [3000]          # TCP/UDP [ Ruby on Rails Web Server ]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [5432]             # TCP/UDP [ PortgresSql ]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [3306]             # TCP/UDP [ MySQL ]
+       Cidr: "0.0.0.0/0"   
+     - type: ingress
+       Ports: [2382]          # TCP/UDP [ SQL Server Analysis Services Browser ]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [2484]          # TCP/UDP [ Oracle DB SSl ]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [61621]          # TCP [ Cassandra OpsCentre Agent ]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [7001]          # TCP [ Cassandra ]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [636]          # TCP [ LDAP SSL ]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [8000]          # TCP/UDP [ HTTP Alternate ]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [3020]          # TCP/UDP [  CIFS/ SMB ]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [1434]          # TCP/UDP [ MSSQL Admin ]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [2383]          # TCP/UDP [ SQL Server Analysis Services ]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [2379]          # TCP [ etcd ]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [9300]          # TCP [ Elastic Search ]
+       Cidr: "0.0.0.0/0"    
+     - type: ingress
+       Ports: [27018]          # TCP/UDP [ MongoDB ]
+       Cidr: "0.0.0.0/0"
+     - type: ingress
+       Ports: [27019]          # TCP/UDP [ MongoDB ]
+       Cidr: "0.0.0.0/0"
+#     - type: ingress
+#       Ports: [22]
+#       CidrV6: "::/0"
+#  actions:
+#     - type: remove-permissions
+#       ingress: matched

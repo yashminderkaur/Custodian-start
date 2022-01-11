@@ -1,0 +1,9 @@
+policies: 
+  - name: iam-user-mfa
+    resource: iam-user
+    description: 
+          This policy will ensure that all the users have mfa enabled. 
+    filters:
+      - type: credential
+        key: mfa_active
+        value: true

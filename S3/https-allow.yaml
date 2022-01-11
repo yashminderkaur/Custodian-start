@@ -1,0 +1,15 @@
+policies: 
+  - name: allow-https
+    resource: aws.s3
+    actions: 
+      - type: set-statements
+        statements:
+          - Sid: "DenyHttp"
+            Effect: "Deny"
+            Action: "s3:GetObject"
+              Principal:
+              AWS: "*"
+            Resource: "arn:aws:s3:::{bucket_name}/*"
+            Condition:
+              Bool:
+                "aws:SecureTransport": false

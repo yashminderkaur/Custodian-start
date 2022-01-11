@@ -1,0 +1,10 @@
+policies: 
+  - name: iam-mfa-console
+    resource: iam-user
+    filters:
+      - type: credential
+        key: mfa_active
+        value: false
+      - type: credential
+        key: password_enabled
+        value: true

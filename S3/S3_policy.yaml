@@ -1,0 +1,33 @@
+policies: 
+  - name: s3-encryption 
+    resource: aws.s3
+    description: |
+        This policy will enable server side encryption.
+        KMS-managed keys
+        S3 managed keys
+        bucket object encryption
+    filters:
+      - type: bucket-encryption
+        state: false
+    actions:
+      - type: set-bucket-encryption
+        crypto: AES256
+        enabled: true
+#      - type: encrypt-keys
+#        crypto: aws:kms
+#        key: alias/aws/s3
+
+# policy for enabling versioning
+
+  - name: s3-versioning
+    resource: aws.s3
+    description: | 
+      For enabling bucket versioning.
+#    filters:
+#     - type: toggle-versioning
+#       enabled: false
+    actions: 
+     - type: toggle-versioning
+       enabled: true
+# policy for bucket lifecycle.
+

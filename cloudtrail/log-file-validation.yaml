@@ -1,0 +1,10 @@
+policies:
+    - name: trails-missing-logfile
+      resource: cloudtrail
+      filters:
+        - IsMultiRegionTrail: true
+        - LogFileValidationEnabled: false
+      actions: 
+        - type: update-trail
+          attributes:
+            EnableLogFileValidation: true

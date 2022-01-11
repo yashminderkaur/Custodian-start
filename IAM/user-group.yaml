@@ -1,0 +1,9 @@
+policies: 
+  - name: user-in-group
+    resource: iam.user
+    description: |
+        IAM user should be a part of a group. 
+    filters: 
+      - type: 
+#    actions:
+#      - 

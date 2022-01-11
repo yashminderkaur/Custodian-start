@@ -1,0 +1,8 @@
+policies:
+  - name: security-group-default-vpc
+    resource: default-vpc
+    filters:
+      - type: ingress
+        Ports: [22]
+    actions: 
+      - type: deny

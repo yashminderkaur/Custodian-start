@@ -1,0 +1,23 @@
+policies:
+  - name: mfa-information
+    resource: iam-user
+    Description: |
+        This policy will check the use of root account in 30 days.
+    filters:
+      - type: credential
+        key: password_last_used
+      - type: credential
+        key: access_keys.last_used_date
+        value_type: age
+        value: 30
+        op: less-than     
+
+
+#policies:
+#  - name: root-keys-or-no-mfa
+#    resource: account
+#    filters:
+#      - type: iam-summary
+#        key: AccountMFAEnabled
+#        value: true
+#        op: eq

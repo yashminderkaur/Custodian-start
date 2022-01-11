@@ -1,0 +1,29 @@
+policies:
+  - name: s3-replication-cross-account
+    resource: s3
+    filters:
+      - type: value
+        key: Replication.ReplicationConfiguration.Rules[].Destination.Account
+        value: present
+      - type: cross-account
+#      - type: value
+#        key: Replication.ReplicationConfiguration.Rules[].Destination.Account
+#        value_from:
+#          url: 's3:///path/to/file.json'
+#          format: json
+#          expr: "approved_accounts.*"
+#        op: ni
+    actions:
+      - type: set-replication
+        state: enable
+
+  - name: s3-replication-same-account
+    resource: s3
+    filters: 
+      - type: value
+        key: Replication.ReplicationConfiguration.Rules[].Destination.Account
+        value: present
+    actions:
+      - type: set-replication
+        state: enable
+        

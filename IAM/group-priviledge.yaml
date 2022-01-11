@@ -1,0 +1,7 @@
+policies:
+  - name: iam-user-in-group
+    resource: iam-user
+    comment: |
+      to tag users associated with a group
+    filters:
+      - type: group

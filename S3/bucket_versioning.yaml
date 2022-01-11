@@ -1,0 +1,8 @@
+policies: 
+  - name: s3-versioning
+    resource: aws.s3
+    description: | 
+      For enabling bucket versioning.
+    actions: 
+     - type: toggle-versioning
+       enabled: true  

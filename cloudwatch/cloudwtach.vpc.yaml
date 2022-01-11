@@ -1,0 +1,10 @@
+policies: 
+  - name: vpc_securitygroup_changes
+    resource: 
+#    source: vpc
+    description: |
+          This policy will look for VPC security changes.
+    filters: 
+       - type: type
+         
+         

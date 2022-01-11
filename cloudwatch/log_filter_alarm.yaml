@@ -1,0 +1,29 @@
+policies: 
+  - name: log_filters_alarms
+    resource: cloudwatch
+    description: |
+           This policy will log metric filter and alarm configuartion for:
+            - VPC Security Group Changes
+            - VPC changes
+            - Changes to VPC NACLs
+            - config configuartion changes
+            - disabling or scheduled deletion of KMS CKMS
+            - Cloudtrail configuartion changes
+            - Managemnt Console sign-in without MFA
+            - usage of root account
+            - denied connections in CloudFront logs
+            - Management Console authentication failure
+            - unauthorized API calls
+            - S3 Bucket policy changes
+            - VPC route table changes
+            - changes to VPC network gateway 
+            - IAM policy changes
+    filters:
+      - type: value
+        value_type: age
+        key: stateUpdatedTimestamp
+        value: 30
+        op: ge
+      - StateValue:  
+#    actions:
+

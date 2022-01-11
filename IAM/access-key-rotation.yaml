@@ -1,0 +1,13 @@
+policies: 
+  - name: access-key-rotation-90-days
+    resource: iam-user
+    comment: |
+        This policy will check for users with access keys for more than 90 days. 
+    filters: 
+      - type: credential
+        key: access_keys.last_rotated
+        value_type: age
+        value: 90
+        op: gt
+
+        

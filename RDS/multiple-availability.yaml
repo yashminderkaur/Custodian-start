@@ -1,0 +1,18 @@
+policies: 
+  - name: multiple-availablity
+    resource: rds
+    description: |
+          This policy will ensure that rds cluster is available in multiple availability zones. 
+    filters: 
+      - type: value
+        key: 'MultiAZ'
+        value: true
+#    actions:
+#      - type: value
+#        key: 'MultiAZ'
+#        value: enabled
+
+
+
+
+    

@@ -1,0 +1,15 @@
+policies: 
+  - name: s3-lifecycle
+    resource: aws.s3
+    description: |
+        This is an S3 configure lifecycle policy.
+    actions:
+      - type: configure-lifecycle
+        rules: 
+          - ID: company-se-lifecycle
+            Status: Enabled
+#            Filter: 
+            Transitions:
+              - Days: 180
+            NoncurrentVersionExpiration:
+              NoncurrentDays: 35

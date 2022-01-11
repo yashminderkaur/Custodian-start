@@ -1,0 +1,11 @@
+policies: 
+  - name: no-iam-administrative-access
+    resource: iam-user
+    description: |
+        This policy will ensure that no IAM policy has full adminstrative access. 
+    filters:
+      - type: has-specific-managed-policy
+        value: admin-policy
+#    actions:
+#      - delete    
+

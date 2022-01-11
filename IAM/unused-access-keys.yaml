@@ -1,0 +1,13 @@
+policies: 
+  - name: unsused_access_key_90_days
+    resource: iam-user
+    description: | 
+            This policy will make sure that unused access keys are disabled after 90 days.
+    filters: 
+      - type: credential
+        key: access_keys.last_used_date
+        value_type: age
+        value: 90
+        op: less-than     
+    actions: 
+      - delete 

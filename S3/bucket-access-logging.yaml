@@ -1,0 +1,6 @@
+policies: 
+  - name: bucket-access-logging
+    resource: aws.s3
+    description: |
+        This policy will enable bucket access logging.
+    

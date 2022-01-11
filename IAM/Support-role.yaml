@@ -1,0 +1,9 @@
+policies:
+  - name: support-role
+    resource: iam-role
+    description: |
+        This policy will ensure that a support role has been created to manage incident with AWS Support.
+    filters:
+      - type: has-specific-policy
+        value: support-role
+                
